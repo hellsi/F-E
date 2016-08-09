@@ -1,0 +1,68 @@
+$colors: (
+	"grass": #aece63,
+	"dark-sky": #6994b6,
+	"pink-orange": #e78e7e,
+	"back": #f5f5f5
+);
+$font-stand: 1em;
+@mixin box ($size, $color, $radius) {
+	border: $size solid $color;
+	border-radius: $radius;
+}
+@mixin icon ($size) {
+	height: $size;
+	width: $size;
+	background-repeat: no-repeat;
+    background-position: center;
+}
+@mixin notif {
+	height: 30px;
+	width: 30px;
+	background-color: #ff826c;
+	border-radius: 50px;
+}
+@mixin switch ($form, $contOn, $contOf) {
+	position: relative; width: 70px;
+	-webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+	&-checkbox {
+		display: none;
+	};
+	&-label{
+	   	display: block; overflow: hidden; cursor: pointer;	
+		@include box(2px, #FFFFFF, $form);
+	};
+	&-inner {
+	   	display: block; width: 200%; margin-left: -100%;
+	   	transition: margin 0.3s ease-in 0s;
+	   	&:before, &:after {
+	   		float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+	   		font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+	   		box-sizing: border-box;
+	   	};
+	   	&:before {
+	   		content: $contOn;
+	   		padding-left: 10px;
+	   		background-color: map-get($colors, "grass"); color: #FFFFFF;
+	   	};
+	   	&:after {
+		    content: $contOf;
+		    padding-right: 10px;
+		    background-color: map-get($colors, "pink-orange"); color: #FFFFFF;
+		    text-align: right;
+		};
+	};
+	&-switch {
+	    display: block; width: 18px; margin: 6px;
+	    background: #FFFFFF;
+	    position: absolute; top: 0; bottom: 0;
+	    right: 36px;
+	    @include box(2px, #FFFFFF, $form);
+	    transition: all 0.3s ease-in 0s; 
+	};
+	&-checkbox:checked + &-label &-inner {
+		margin-left: 0;
+	};
+	&-checkbox:checked + &-label &-switch {
+		right: 0px; 
+	};
+};

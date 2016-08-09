@@ -1,0 +1,304 @@
+/*
+  ========================================
+  CLEAR
+  ========================================
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+  ========================================
+  HEADER
+  ========================================
+*/
+header {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #cfcfcf;
+  white-space: nowrap;
+}
+
+.gradient {
+  display: table;
+  width: 100%;
+  height: 5px;
+}
+.gradient .grass {
+  background-color: #aece63;
+}
+.gradient .dark-sky {
+  background-color: #6994b6;
+}
+.gradient .pink-orange {
+  background-color: #e78e7e;
+}
+.gradient div {
+  display: table-cell;
+  width: 16%;
+  height: 5px;
+}
+.gradient div:first-child, .gradient div:last-child {
+  width: 2%;
+}
+
+nav, nav li, .nav_bar, form, .notification, .account, .icon, .onoffswitch, .switchsquare {
+  display: inline-block;
+}
+
+nav {
+  width: 50%;
+  margin: 0px 0px 30px 0;
+  text-align: center;
+}
+nav li {
+  margin-right: 60px;
+}
+nav li:last-child {
+  margin-right: 0;
+}
+nav li a {
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+.nav_bar {
+  width: 50%;
+}
+.nav_bar input {
+  border: 1px solid #cfcfcf;
+  border-radius: 0;
+  width: 60%;
+  height: 50px;
+  font-size: 1.3em;
+  outline: none;
+  background-image: url(http://www.clipartbest.com/cliparts/dir/aXn/diraXnR6T.png);
+  background-repeat: no-repeat;
+  background-position: 350px;
+  background-size: 8%;
+}
+.nav_bar .icon {
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: 20px;
+}
+.nav_bar .icon:first-child {
+  margin-left: 40px;
+  background-image: url(../icon/bell.png);
+}
+.nav_bar .icon:last-child {
+  margin-left: 20px;
+  background-image: url(../icon/speech-bubble.png);
+}
+.nav_bar .icon .alarm {
+  height: 30px;
+  width: 30px;
+  background-color: #ff826c;
+  border-radius: 50px;
+  position: absolute;
+  right: 0px;
+}
+
+.account {
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: 15px;
+  margin-left: 30px;
+  background-image: url(../icon/account.jpg);
+  border-radius: 30px;
+  background-size: cover;
+}
+
+/*
+  ========================================
+  SWITCHES
+  ========================================
+*/
+.onoffswitch {
+  position: relative;
+  width: 70px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #FFFFFF;
+  border-radius: 20px;
+}
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "ON";
+  padding-left: 10px;
+  background-color: #aece63;
+  color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+  content: "OF";
+  padding-right: 10px;
+  background-color: #e78e7e;
+  color: #FFFFFF;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block;
+  width: 18px;
+  margin: 6px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 36px;
+  border: 2px solid #FFFFFF;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+
+.switchsquare {
+  position: relative;
+  width: 70px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.switchsquare-checkbox {
+  display: none;
+}
+.switchsquare-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #FFFFFF;
+  border-radius: 5px;
+}
+.switchsquare-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.switchsquare-inner:before, .switchsquare-inner:after {
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.switchsquare-inner:before {
+  content: "V";
+  padding-left: 10px;
+  background-color: #aece63;
+  color: #FFFFFF;
+}
+.switchsquare-inner:after {
+  content: "X";
+  padding-right: 10px;
+  background-color: #e78e7e;
+  color: #FFFFFF;
+  text-align: right;
+}
+.switchsquare-switch {
+  display: block;
+  width: 18px;
+  margin: 6px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 36px;
+  border: 2px solid #FFFFFF;
+  border-radius: 5px;
+  transition: all 0.3s ease-in 0s;
+}
+.switchsquare-checkbox:checked + .switchsquare-label .switchsquare-inner {
+  margin-left: 0;
+}
+.switchsquare-checkbox:checked + .switchsquare-label .switchsquare-switch {
+  right: 0px;
+}
+
+/*# sourceMappingURL=main.css.map */
